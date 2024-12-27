@@ -38,9 +38,8 @@ all_data %>%
 # solution with data.table ------------------------
 suppressMessages(library(data.table))
 
-do.call()
-
-merge_two(all_data[3], all_data[7])
+data.frame(lapply(all_data, function(x) 
+  merge(x, data.frame(id=seq(1,20)), by='id', all=T)))
 
 
 
